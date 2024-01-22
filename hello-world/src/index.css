@@ -33,10 +33,26 @@ body {
   object-fit: cover;
 }
 
-@media screen and (min-width: 768px) {
-  .bookList{
-     grid-template-columns: repeat(3, 1fr) 
-  }
+.book p {
+  margin: 15px 0;
+}
+
+.book button {
+  background-color: cyan;
+  color: white;
+  padding: 7px 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.book button:hover{
+  opacity: 0.5;
 }
 
 
+@media screen and (min-width: 768px) {
+  .bookList{
+     grid-template-columns: repeat(3, 1fr);
+     align-items: start; 
+  }
+}
