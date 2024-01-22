@@ -18,13 +18,15 @@ import Inline from './components/Inline'
 import Form from './components/Form'
 import LifeCycleA from './components/LifecycleA'
 import ParentComp from './components/ParentComp';
+import BookList from './components/BookList';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <ParentComp />
+        <BookList />
+        {/* <ParentComp /> */}
         {/* <LifeCycleA /> */}
         {/* <Form /> */}
         {/* <Inline />
@@ -39,9 +41,9 @@ class App extends Component {
         {/* <Message /> */}
       {/* <Greet name="Bruce" heroName="Batman">
         <p>This is Children Props</p></Greet> */}
-      {/* <Greet name="Clark" heroName="Superman">
+      {/* { <Greet name="Clark" heroName="Superman">
         <button>Action </button>
-      </Greet> */}
+      </Greet> } */}
       {/* <Greet/> */}
       {/* <Welcome name="Bruce" heroName="Batman"/> 
       <Welcome name="Clark" heroName="Superman"/>
@@ -52,4 +54,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

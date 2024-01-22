@@ -1,34 +1,34 @@
-import React, { Component } from 'react'
-import { LifeCycleB } from './LifecycleB'
+import React, { Component } from "react";
+import { LifeCycleB } from "./LifecycleB";
 
 export class LifecycleA extends Component {
-    constructor(props) {
-      super(props)
-    
-      this.state = {
-         name: 'Kamal'
-      }
-      console.log('LifecycleA constructor')
-    }
+  constructor(props) {
+    super(props);
 
-    static getDerivedStateFromProps(props, state) {
-        console.log('LifeCycleA getDerivedStateFromProps')
-        return null
-    }
+    this.state = {
+      name: "Kamal",
+    };
+    console.log("LifecycleA constructor");
+  }
 
-    componentDidMount(){
-        console.log('LifeCycleA componentDidMount')
-    }
-  
+  static getDerivedStateFromProps(props, state) {
+    console.log("LifeCycleA getDerivedStateFromProps");
+    return null;
+  }
+
+  componentDidMount() {
+    console.log("LifeCycleA componentDidMount");
+  }
+
   render() {
-    console.log('LifecycleA render')
+    console.log("LifecycleA render");
     return (
-        <div>
-             <div>LifeCycle A</div>
-             <LifeCycleB />
-        </div>
-    )
+      <div>
+        <div>LifeCycle A</div>
+        <LifeCycleB />
+      </div>
+    );
   }
 }
 
-export default LifecycleA
+export default LifecycleA;

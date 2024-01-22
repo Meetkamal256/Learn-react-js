@@ -1,7 +1,7 @@
 {
-    "cSpell.words": [
-        "Abida",
-        "Kamal",
-        "Kamaluddeen"
-    ]
+  "cSpell.words": ["Abida", "Kamal", "Kamaluddeen"],
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  
 }
