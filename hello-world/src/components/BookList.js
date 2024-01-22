@@ -8,6 +8,7 @@ function BookList() {
   const Title = (props) => {
     return <h2>{props.bookTitle}</h2>;
   };
+  // const Title = ({bookTitle}) => <h2>{bookTitle}</h2>; destructuring method
   const Author = (props) => {
     return <h4>{props.authorName}</h4>;
   };
@@ -38,7 +39,7 @@ function BookList() {
         bookTitle="Iron Flame"
         authorName="Rebecca Yarros"
       />
-
+      
       <Book
         image="https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_UL600_SR600,400_.jpg"
         bookTitle="Atomic Habits"
