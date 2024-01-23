@@ -19,13 +19,15 @@ import Form from './components/Form'
 import LifeCycleA from './components/LifecycleA'
 import ParentComp from './components/ParentComp';
 import BookList from './components/BookList';
+import BookList2 from "./components/BookList2";
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <BookList />
+        <BookList2 />
+        {/* <BookList /> */}
         {/* <ParentComp /> */}
         {/* <LifeCycleA /> */}
         {/* <Form /> */}
