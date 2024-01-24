@@ -2,8 +2,9 @@ import React from "react";
 
 function BookList2() {
   // Book component
-  const Book = ({ image, bookTitle, authorName, children }) => (
+  const Book = ({ number, image, bookTitle, authorName, children }) => (
     <article className="book">
+      <div className="book-number">{`# ${number}`}</div>
       <img src={image} alt="" />
       <h2>{bookTitle}</h2>
       <h4>{authorName}</h4>
@@ -63,9 +64,10 @@ function BookList2() {
   ];
   
   // Map over the list of books and create Book components
-  const renderedBooks = books.map((book, key) => (
+  const renderedBooks = books.map((book, index) => (
     <Book
       key={book.id}
+      number={index +1}
       image={book.image}
       bookTitle={book.bookTitle}
       authorName={book.authorName}
@@ -78,4 +80,4 @@ function BookList2() {
   return <section className="bookList">{renderedBooks}</section>;
 }
 
-export default BookList2;
+export default BookList2; 
