@@ -1,16 +1,14 @@
 import { useState } from "react";
-import Starter from './tutorial/01-useState/starter/02-useState-basics'
+import Starter from "./tutorial/01-useState/starter/04-useState-object";
 import "./index.css";
 
-function App() {
-  const [count, setCount] = useState(0);
 
+function App() {
   return (
     <div className="container">
       <Starter />
     </div>
   );
 }
-
 
 export default App;
