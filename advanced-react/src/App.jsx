@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Starter from "./tutorial/01-useState/starter/01-error-example";
+import Starter from './tutorial/01-useState/starter/02-useState-basics'
 import "./index.css";
 
 function App() {
+  const [count, setCount] = useState(0);
 
   return (
     <div className="container">
@@ -10,5 +11,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
