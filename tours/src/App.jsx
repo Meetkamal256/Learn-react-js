@@ -21,12 +21,12 @@ function App() {
       console.log(error);
     }
   };
-  
+
 
   useEffect(() => {
     fetchTours();
   }, []);
-
+  
   if (loading) {
     return (
       <main>
@@ -36,7 +36,7 @@ function App() {
   }
   return (
     <main>
-      <Tours />
+      <Tours tours={tours} />
     </main>
   );
 }
