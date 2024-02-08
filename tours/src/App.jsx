@@ -26,11 +26,11 @@ function App() {
       console.log(error);
     }
   };
-
+  
   useEffect(() => {
     fetchTours();
   }, []);
-
+  
   if (loading) {
     return (
       <main>
