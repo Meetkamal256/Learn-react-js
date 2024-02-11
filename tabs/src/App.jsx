@@ -1,16 +1,34 @@
-import { useState } from 'react'
-import './index.css'
+import { useState } from "react";
+import "./index.css";
+import { useEffect } from "react";
 
 const url = "https://course-api.com/react-tabs-project";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+  const [jobs, setJobs] = useState([]);
+  const [value, setValue] = useState(0);
 
-  return (
-    <>
-    
-    </>
-  )
+  const fetchJobs = async () => {
+    const response = await fetch(url);
+    const newJobs = await response.json();
+    setJobs(newJobs);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="section loading">
+        <h1>Loading...</h1>
+      </section>
+    );
+  }
+
+  return <h2>Tabs project setup</h2>;
 }
 
-export default App
+export default App;
