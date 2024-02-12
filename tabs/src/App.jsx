@@ -9,18 +9,18 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0);
-
+  
   const fetchJobs = async () => {
     const response = await fetch(url);
     const newJobs = await response.json();
     setJobs(newJobs);
     setLoading(false);
   };
-
+  
   useEffect(() => {
     fetchJobs();
   }, []);
-
+  
   if (loading) {
     return (
       <section className="section loading">
@@ -28,7 +28,7 @@ function App() {
       </section>
     );
   }
-
+  
   const { company, dates, duties, title } = jobs[value];
   return (
     <section className="section">
