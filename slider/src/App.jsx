@@ -36,7 +36,7 @@ function App() {
         }
         return index;
       });
-    }, 3000);
+    }, 5000);
     return () => {
       clearInterval(slider);
     };
