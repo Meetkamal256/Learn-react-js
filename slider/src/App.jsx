@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./data";
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./index.css";
@@ -6,6 +6,42 @@ import "./index.css";
 function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
+
+  const nextSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex + 1;
+      if (index > people.length - 1) {
+        index = 0;
+      }
+      return index;
+    });
+  };
+
+  const prevSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex - 1;
+      if (index < 0) {
+        index = people.length - 1;
+      }
+      return index;
+    });
+  };
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex((oldIndex) => {
+        let index = oldIndex + 1;
+        if (index > people.length - 1) {
+          index = 0;
+        }
+        return index;
+      });
+    }, 3000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
+
   return (
     <section className="section">
       <div className="title">
@@ -16,21 +52,33 @@ function App() {
       <section className="section-center">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
+          let position = "nextSlide";
+
+          if (personIndex === index) {
+            position = "activeSlide";
+          }
+
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = "lastSlide";
+          }
 
           return (
-            <article key={id}>
+            <article key={id} className={position}>
               <img src={image} alt={name} className="person-img" />
               <h4>{name}</h4>
               <p className="title">{title}</p>
               <p className="text">{quote}</p>
-              <FaChevronLeft />
+              <FaQuoteRight className="icon" />
             </article>
           );
         })}
-        <button className="prev">
+        <button className="prev" onClick={prevSlide}>
           <FaChevronLeft />
         </button>
-        <button className="next">
+        <button className="next" onClick={nextSlide}>
           <FaChevronRight />
         </button>
       </section>
