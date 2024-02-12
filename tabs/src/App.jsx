@@ -16,11 +16,11 @@ function App() {
     setJobs(newJobs);
     setLoading(false);
   };
-  
+
   useEffect(() => {
     fetchJobs();
   }, []);
-  
+
   if (loading) {
     return (
       <section className="section loading">
@@ -28,7 +28,7 @@ function App() {
       </section>
     );
   }
-  
+
   const { company, dates, duties, title } = jobs[value];
   return (
     <section className="section">
@@ -38,6 +38,19 @@ function App() {
       </div>
       <div className="jobs-center">
         {/* Button container */}
+        <div className="btn-container">
+          {jobs.map((item, index) => {
+            return (
+              <button
+                key={item.id}
+                onClick={() => setValue(index)}
+                className={`job-btn ${index === value && "active-btn"}`}
+              >
+                {item.company}
+              </button>
+            );
+          })}
+        </div>
         {/* job info */}
         <article className="job-info">
           <h3>{title}</h3>
