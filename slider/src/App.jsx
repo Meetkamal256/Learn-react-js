@@ -1,33 +1,41 @@
-import { useState } from 'react'
-import './index.css'
+import { useState } from "react";
+import data from "./data";
+import { FaQuoteRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [people, setPeople] = useState(data);
+  const [index, setIndex] = useState(0);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <section className="section">
+      <div className="title">
+        <h2>
+          <span>/</span>reviews
+        </h2>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <section className="section-center">
+        {people.map((person, personIndex) => {
+          const { id, image, name, title, quote } = person;
+
+          return (
+            <article key={id}>
+              <img src={image} alt={name} className="person-img" />
+              <h4>{name}</h4>
+              <p className="title">{title}</p>
+              <p className="text">{quote}</p>
+              <FaChevronLeft />
+            </article>
+          );
+        })}
+        <button className="prev">
+          <FaChevronLeft />
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        <button className="next">
+          <FaChevronRight />
+        </button>
+      </section>
+    </section>
+  );
 }
 
-export default App
+export default App;
