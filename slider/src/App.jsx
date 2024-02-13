@@ -6,7 +6,7 @@ import "./index.css";
 function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
-  
+
   const nextSlide = () => {
     setIndex((oldIndex) => {
       let index = oldIndex + 1;
@@ -53,18 +53,18 @@ function App() {
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
           let position = "nextSlide";
-
+          
           if (personIndex === index) {
             position = "activeSlide";
           }
-
+          
           if (
             personIndex === index - 1 ||
             (index === 0 && personIndex === people.length - 1)
           ) {
             position = "lastSlide";
           }
-
+          
           return (
             <article key={id} className={position}>
               <img src={image} alt={name} className="person-img" />
