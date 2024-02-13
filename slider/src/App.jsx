@@ -6,7 +6,7 @@ import "./index.css";
 function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
-
+  
   const nextSlide = () => {
     setIndex((oldIndex) => {
       let index = oldIndex + 1;
@@ -16,7 +16,7 @@ function App() {
       return index;
     });
   };
-
+  
   const prevSlide = () => {
     setIndex((oldIndex) => {
       let index = oldIndex - 1;
@@ -26,7 +26,7 @@ function App() {
       return index;
     });
   };
-
+  
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex((oldIndex) => {
@@ -41,7 +41,7 @@ function App() {
       clearInterval(slider);
     };
   }, [index]);
-
+  
   return (
     <section className="section">
       <div className="title">
