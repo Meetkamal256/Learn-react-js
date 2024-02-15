@@ -7,17 +7,29 @@ function App() {
   const [name, setName] = useState("");
   const [list, setList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
-
+  const [alert, setAlert] = useState({ show: true, msg: "hello world", type: "success" });
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
+    if (!name) {
+      // display alert
+    } else if (name && isEditing) {
+      // deal with edit
+    } else {
+      // show alert
+      const newItem = {
+        id: new Date().getTime().toLocaleString(),
+        title: name,
+      };
+      setList([...list, newItem]);
+      setName("");
+    }
   };
-
+  
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
-        {alert.show && <Alert />}
+        {alert.show && <Alert {...alert} />}
         <h3>grocery bud</h3>
         <div className="form-control">
           <input
@@ -33,10 +45,12 @@ function App() {
           </button>
         </div>
       </form>
-      <div className="grocery-container">
-        <List />
-        <button className="clear-btn">Clear items</button>
-      </div>
+      {list.length > 0 && (
+        <div className="grocery-container">
+          <List items={list} />
+          <button className="clear-btn">Clear items</button>
+        </div>
+      )}
     </section>
   );
 }
