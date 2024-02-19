@@ -4,7 +4,7 @@ const UseRefBasics = () => {
   const [value, setValue] = useState(0);
   const refContainer = useRef(null);
   const isMounted = useRef(false);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(refContainer.current);
@@ -15,7 +15,7 @@ const UseRefBasics = () => {
     // console.log(refContainer.current);
     refContainer.current.focus();
   });
-
+  
   useEffect(() => {
     if (!isMounted.current) {
       isMounted.current = true;

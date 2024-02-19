@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const UncontrolledInputs = () => {
   const [value, setValue] = useState(0);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -36,7 +36,7 @@ const UncontrolledInputs = () => {
             name='password'
           />
         </div>
-
+        
         <button type='submit' className='btn btn-block'>
           submit
         </button>

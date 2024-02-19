@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Starter from "./tutorial/02-useEffect/starter/04-fetch-data";
+import Final from "./tutorial/07-useRef/final/01-useRef-basics";
+import Starter from "./tutorial/07-useRef/starter/01-useRef-basics";
 import "./index.css";
-
 
 function App() {
   return (
     <div className="container">
+      {/* <Final /> */}
       <Starter />
     </div>
   );
