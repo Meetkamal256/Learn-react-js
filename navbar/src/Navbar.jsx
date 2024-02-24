@@ -5,15 +5,15 @@ import { socialLinks } from "./data";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prev) => !prev);
   };
-
+  
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
-
+  
   return (
     <nav>
       <div className="logo">

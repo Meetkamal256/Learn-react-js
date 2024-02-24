@@ -4,7 +4,7 @@ import List from './List';
 const LowerStateChallenge = () => {
   const [people, setPeople] = useState(data);
   const [name, setName] = useState('');
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
