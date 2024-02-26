@@ -7,13 +7,13 @@ const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
-  
+
   useEffect(() => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`
+      linksContainerRef.current.style.height = `${linksHeight}px`;
     } else {
-      linksContainerRef.current.style.height = '0px';
+      linksContainerRef.current.style.height = "0px";
     }
   }, [showLinks]);
 
@@ -23,10 +23,12 @@ const Navbar = () => {
         <div className="nav-header">
           <img src={logo} alt="logo" />
           <button
-            className="nav-toggle"
+            className={`hamburger ${showLinks ? "open" : ""}`}
             onClick={() => setShowLinks(!showLinks)}
           >
-            <FaBars />
+            <span className="hamburger-top"></span>
+            <span className="hamburger-middle"></span>
+            <span className="hamburger-bottom"></span>
           </button>
         </div>
 
