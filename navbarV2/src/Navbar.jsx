@@ -31,7 +31,7 @@ const Navbar = () => {
             <span className="hamburger-bottom"></span>
           </button>
         </div>
-
+        
         <div
           className={`links-container ${showLinks ? "show-container" : ""}`}
           ref={linksContainerRef}
@@ -47,7 +47,7 @@ const Navbar = () => {
             })}
           </ul>
         </div>
-
+        
         <ul className="social-icons">
           {social.map((icons) => {
             const { id, url, icon } = icons;
