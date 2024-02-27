@@ -14,13 +14,26 @@ const AppProvider = ({ children }) => {
   };
 
   const openModal = () => {
-    setIsSidebarOpen(true);
+    setIsModalOpen(true);
   };
   const closeModal = () => {
-    setIsSidebarOpen(false);
+    setIsModalOpen(false);
   };
 
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{
+        isSidebarOpen,
+        isModalOpen,
+        openSidebar,
+        closeSidebar,
+        openModal,
+        closeModal,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 // custom hook
