@@ -6,7 +6,7 @@ const url = "https://icanhazdadjoke.com/";
 
 const Headers = () => {
   const [joke, setJoke] = useState("random dad joke");
-
+  
   const fetchDadJoke = async () => {
     try {
       const {data} = await axios(url, {
@@ -29,4 +29,5 @@ const Headers = () => {
     </section>
   );
 };
+
 export default Headers;
