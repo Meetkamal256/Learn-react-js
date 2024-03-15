@@ -47,6 +47,7 @@ const AppProvider = ({ children }) => {
       value={{
         loading,
         searchTerm,
+        setSearchTerm,
         cocktails,
         setCocktails,
       }}
