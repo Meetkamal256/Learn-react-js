@@ -23,19 +23,19 @@ const SingleCocktail = () => {
             strCategory: category,
             strGlass: glass,
             strInstructions: instructions,
-            strIngredients1,
-            strIngredients2,
-            strIngredients3,
-            strIngredients4,
-            strIngredients5,
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
           } = data.drinks[0];
           const ingredients = [
-            strIngredients1,
-            strIngredients2,
-            strIngredients3,
-            strIngredients4,
-            strIngredients5,
-          ];
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
+          ].filter(Boolean);
           const newCocktail = {
             name,
             image,
@@ -93,6 +93,12 @@ const SingleCocktail = () => {
           <p>
             <span className="drink-data">instructions :</span>
             {instructions}
+          </p>
+          <p>
+            <span className="drink-data">ingredients :</span>
+            {ingredients.map((item, index) => {
+              return item ? <span key={index}>{item}</span> : null;
+            })}
           </p>
         </div>
       </div>
